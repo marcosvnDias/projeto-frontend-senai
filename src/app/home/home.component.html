@@ -1,0 +1,16 @@
+<div class="box-oferta-dia">
+    <div class="titulo-oferta">
+        <p>Ofeta do Dia</p>
+    </div>
+    <div class="carousel">
+        <div *ngFor="let produto of produtos; let index=index">
+            <app-card-produto [urlImg]="produto.urlImg" 
+            [valor]="produto.valor" [valorPromocao]="produto.desconto" [promocao]="true" 
+            [titulo]="produto.titulo" *ngIf="index >= 1 && index < 4 && index != 2"></app-card-produto>
+
+            <app-card-produto [urlImg]="produto.urlImg" 
+            [valor]="produto.valor" [valorPromocao]="produto.desconto" [promocao]="true"
+            [titulo]="produto.titulo" *ngIf="index == 2" [focus]="true"></app-card-produto>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,21 @@
+.box-oferta-dia {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+}
+
+.titulo-oferta {
+    height: 100%;
+    width: 30%;
+    font-size: 28px;
+    background-color: white;
+    color: rgb(131, 160, 185);
+    border-radius: 6px;
+    text-align: center
+}
+
+.carousel {
+    display: flex;
+    gap: 38px;
+}
