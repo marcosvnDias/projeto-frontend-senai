@@ -95,8 +95,6 @@ export class HomeComponent implements OnInit{
       let produtosAtualizado:Produto[] = produtos.filter((item) => item.titulo != maisVendido.titulo);
       produtos = produtosAtualizado; 
       
-      // console.log(maisVendido)
-      // console.log(produtos)
     }
     
     // console.log(produtos)
