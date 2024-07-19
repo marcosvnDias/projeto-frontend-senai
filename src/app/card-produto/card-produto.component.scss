@@ -12,6 +12,19 @@
     }
 }
 
+.modoSlide {
+    height: 310px;
+    width: 260px;
+    background-color: white;
+    border-radius: 6px;
+    padding-bottom: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+    &:hover {
+        scale: 0.95;
+    }
+}
+
 .box-img {
     height: 100%;
     width: 100%;

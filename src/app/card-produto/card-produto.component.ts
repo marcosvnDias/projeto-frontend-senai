@@ -28,12 +28,17 @@ export class CardProdutoComponent implements OnInit {
   @Input()
   valorPromocao?: number;
 
+  @Input()
+  modoSlide?: true
+
   status = "box-produto";
   ngOnInit(): void {
+    if (this.modoSlide) {
+      this.status = "modoSlide";
+    }
+
     if (this.focus) {
-      this.status = "box-produto focus";
-    } else {
-      this.status = "box-produto";
+      this.status += " focus";
     }
 
     if (this.promocao) {

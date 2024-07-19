@@ -52,13 +52,15 @@ export class HomeComponent implements OnInit{
     desconto: 540,
     vendidos: 462
   }];
+
+  produtosCarousel:Produto[] = [...this.produtos]; 
   
   produtosMaisVendidos:Produto[] = [];
 
   ngOnInit(): void {
     // throw new Error('Method not implemented.');
-    this.trocarPosicoes(this.produtos);
-    let maisVendidos:Produto[] = this.acharMaisVendidos(this.produtos);
+    this.trocarPosicoes(this.produtosCarousel);
+    let maisVendidos:Produto[] = this.acharMaisVendidos(this.produtosCarousel);
     this.produtosMaisVendidos = maisVendidos;
     console.log(this.produtosMaisVendidos)
   }
@@ -102,15 +104,4 @@ export class HomeComponent implements OnInit{
     return produtos
   }
 
-  // removerItem(produtos:Produto[], itemDesejado:Produto) {
-  //   let produtosAtualizado:Produto[] = [];
-  //   let indexItemDesejado = produtos.indexOf(itemDesejado);
-  //   for (let i = 0; i < produtos.length; i++) {
-  //     if (i != indexItemDesejado && indexItemDesejado != -1) {
-  //       produtosAtualizado.push(produtos[i]);
-  //     }
-  //   }
-
-  //   return produtosAtualizado
-  // }
 }
