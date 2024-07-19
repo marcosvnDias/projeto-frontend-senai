@@ -1,6 +1,5 @@
 input, button {
     &[type="search"] {
-        background-color: aliceblue;
         padding: .25rem;
         border: 3px solid rgb(var(--primary-color-vals));
         border-radius: 1rem;
@@ -8,8 +7,13 @@ input, button {
     &[type="button"] {
         cursor: pointer;
         padding: .25rem;
-        border-radius: 1rem;
+        border-radius: .5rem;
+        &:hover {
+            background-color: rgba(244, 244, 244, 0.5)
+        }
+        transition: .3s;
     }
+    background-color: rgb(224, 224, 224);
 }
 
 #product-search {
@@ -26,7 +30,7 @@ input, button {
     &:hover {
         background-color: rgba(var(--primary-color-vals), 0.5)
     }
-    transition-duration: .5s;
+    transition-duration: .4s;
 }
 
 .search {
@@ -35,17 +39,22 @@ input, button {
     justify-content: center;
 }
 
-.logo {
-    width: 50px;
+#logo {
+    height: 50px;
+}
+
+#cart-icon {
+    height: 40px;
 }
 
 #header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: black;
+    background-color: #f5f3f2;
+    padding: 0.3rem;
 
-    --primary-color-vals: 241, 218, 126;
+    --primary-color-vals: 143, 178, 209;
 }
 
 .section {
@@ -62,4 +71,29 @@ input, button {
     &#options-section {
         justify-content: right;
     }
+}
+
+.options {
+    display: flex;
+    align-items: center;
+    * {
+        margin: 0 0.5rem;
+    }
+    button {
+        background-color: rgb(143, 178, 209);
+        border: none;
+        height: 2.5rem;
+        padding: 0 1rem;
+
+        &:hover {
+            background-color: rgba(143, 178, 209, 0.5);
+            border-radius: 1rem;
+        }
+    }
+}
+
+#cart-button {
+    background-color: transparent;
+    height: 3rem;
+    padding: 0;
 }
