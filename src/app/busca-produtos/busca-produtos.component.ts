@@ -3,11 +3,12 @@ import { Router } from '@angular/router';
 import { ProdutosService } from '../services/produtos.service';
 import { CommonModule } from '@angular/common';
 import { CardProdutoComponent } from '../card-produto/card-produto.component';
+import { HeaderComponent } from "../header/header.component";
 
 @Component({
   selector: 'app-busca-produtos',
   standalone: true,
-  imports: [CommonModule, CardProdutoComponent],
+  imports: [CommonModule, CardProdutoComponent, HeaderComponent],
   templateUrl: './busca-produtos.component.html',
   styleUrl: './busca-produtos.component.scss'
 })
