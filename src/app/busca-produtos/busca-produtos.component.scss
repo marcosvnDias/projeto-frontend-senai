@@ -1,0 +1,27 @@
+* {
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    align-items: center;
+}
+
+.alert {
+    color: rgb(158, 0, 0);
+    border: none;
+    border-radius: 25px;
+    font-size: 20px;
+    padding: 15px;
+    background-color:#f8aeae;
+}
+
+.container-produtos {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: space-between;
+}
+
+.produto {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 60px;
+}
