@@ -18,17 +18,20 @@ export class BuscaProdutosComponent {
   flag: boolean = false;
 
   constructor(private router: Router, private produtosService: ProdutosService) {
+    let parametro = this.router.getCurrentNavigation()?.extras.state;
+    if (parametro) {
+      this.buscar(parametro?.['parametro']);
+    }
   }
-  produtosFiltrados: any = this.produtosService.getProdutos();
+  produtosFiltrados: any = [];
 
-  
+
   buscar(campoBusca: string) {
-
-    if (campoBusca) {
-      this.produtosFiltrados = this.produtos.filter(produto =>
-        produto.titulo.toLowerCase().includes(campoBusca.toLowerCase()));
-    } else {
+    this.produtosFiltrados = this.produtos.filter(produto =>
+      produto.titulo.toLowerCase().includes(campoBusca.toLowerCase()));
+    if (this.produtosFiltrados.length == 0) {
       this.flag = true;
     }
+
   }
 }

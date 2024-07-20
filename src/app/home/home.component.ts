@@ -4,6 +4,7 @@ import { CardProdutoComponent } from "../card-produto/card-produto.component";
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { ProdutosService } from '../services/produtos.service';
+import { FormsModule } from '@angular/forms';
 
 interface Produto {
   urlImg: string,
@@ -16,7 +17,7 @@ interface Produto {
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CarouselModule, CardProdutoComponent, CommonModule],
+  imports: [CarouselModule, CardProdutoComponent, CommonModule, FormsModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
