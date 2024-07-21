@@ -7,7 +7,6 @@ export class ProdutosService {
 
   constructor() { }
 
-
   getProdutos() {
     return this.produtos;
   }

@@ -1,8 +1,7 @@
-<app-header></app-header>
-
+<app-header (buttonClick)="buttonClicked($event)"></app-header>
 
 <fieldset class="exibicao">
-    <legend> Resultados:</legend>
+    <legend> Produtos:</legend>
     <section>
         <div class="container-produtos" >
             <div class="produto" *ngFor="let produto of produtosFiltrados; let index=index">
