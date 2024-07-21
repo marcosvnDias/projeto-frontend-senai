@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { CardProdutoComponent } from "../card-produto/card-produto.component";
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
+import { ProdutosService } from '../services/produtos.service';
+import { FormsModule } from '@angular/forms';
+import { HeaderComponent } from "../header/header.component";
 
 interface Produto {
   urlImg: string,
@@ -14,44 +18,16 @@ interface Produto {
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CarouselModule, CardProdutoComponent, CommonModule],
+  imports: [CarouselModule, CardProdutoComponent, CommonModule, FormsModule, HeaderComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
 export class HomeComponent implements OnInit{
 
-  produtos:Produto[] = [{
-    urlImg: "../assets/geladeira.jpg",
-    valor: 3450,
-    titulo: "Geladeira Panasonic A+",
-    desconto: 2380,
-    vendidos: 21
-  }, {
-    urlImg: "../assets/kindle.jpg",
-    valor: 1500,
-    titulo: "Kindle 11ª Geração",
-    desconto: 1200,
-    vendidos: 5679
-  },
-  {
-    urlImg: "../assets/xbox.jpg",
-    valor: 4000,
-    titulo: "Xbox Série S - 1TB (preto)",
-    desconto: 3400,
-    vendidos: 6500
-  },{
-    urlImg: "../assets/fone-ouvido.jpg",
-    valor: 230,
-    titulo: "Edifier W800BT PLUS",
-    desconto: 180,
-    vendidos: 54
-  }, {
-    urlImg: "../assets/echo.jpg",
-    valor: 600,
-    titulo: "Echo Show 5 (3ª geração)",
-    desconto: 540,
-    vendidos: 462
-  }];
+  constructor(private router: Router, private produtosService: ProdutosService) {
+  }
+
+  produtos:Produto[] = this.produtosService.getProdutos();
 
   produtosCarousel:Produto[] = [...this.produtos]; 
   
@@ -101,5 +77,41 @@ export class HomeComponent implements OnInit{
     produtos = produtosMaisVendidos;
     return produtos
   }
+
+
+
+// substituído pelo service, com mock
+   // produtos:Produto[] = [{
+  //   urlImg: "../assets/geladeira.jpg",
+  //   valor: 3450,
+  //   titulo: "Geladeira Panasonic A+",
+  //   desconto: 2380,
+  //   vendidos: 21
+  // }, {
+  //   urlImg: "../assets/kindle.jpg",
+  //   valor: 1500,
+  //   titulo: "Kindle 11ª Geração",
+  //   desconto: 1200,
+  //   vendidos: 5679
+  // },
+  // {
+  //   urlImg: "../assets/xbox.jpg",
+  //   valor: 4000,
+  //   titulo: "Xbox Série S - 1TB (preto)",
+  //   desconto: 3400,
+  //   vendidos: 6500
+  // },{
+  //   urlImg: "../assets/fone-ouvido.jpg",
+  //   valor: 230,
+  //   titulo: "Edifier W800BT PLUS",
+  //   desconto: 180,
+  //   vendidos: 54
+  // }, {
+  //   urlImg: "../assets/echo.jpg",
+  //   valor: 600,
+  //   titulo: "Echo Show 5 (3ª geração)",
+  //   desconto: 540,
+  //   vendidos: 462
+  // }];
 
 }
