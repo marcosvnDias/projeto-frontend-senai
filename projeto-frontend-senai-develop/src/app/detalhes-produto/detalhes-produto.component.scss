@@ -1,0 +1,110 @@
+.container-foto-descricao {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #fff;
+  max-width: 800px;
+  align-items: center;
+
+  .bloco-produto {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+
+    .card-foto {
+      width: 300px;
+      margin-right: 20px;
+      border-right: 1px solid #ddd;
+      padding-right: 20px;
+      display: flex;
+      align-items: center;
+
+      img {
+        max-height: 100%;
+        max-width: 100%;
+      }
+    }
+
+    .card-descricao {
+      flex: 1;
+      padding-left: 20px;
+
+      h2 {
+        margin: 0 0 10px 0;
+      }
+
+      .valor {
+        text-decoration: line-through;
+        color: #999;
+        font-size: 1.2em;
+        margin: 10px 0;
+      }
+
+      .valor-promocao {
+        color: rgb(131, 160, 185);
+        font-size: 2em;
+        margin: 10px 0;
+      }
+
+      button {
+        padding: 10px 20px;
+        background-color: #241d81;
+        color: white;
+        border: transparent;
+        border-radius: 7px;
+        font-size: 1.2em;
+        cursor: pointer;
+
+        &:hover {
+          background-color: rgb(131, 160, 185);
+          border: solid;
+          border-width: 1px;
+          border-color: rgb(22, 4, 189);
+          border-radius: 7px;
+          color: rgb(22, 4, 189);
+        }
+      }
+    }
+  }
+}
+
+.container-detalhes-comentarios {
+  margin-top: 20px;
+  max-width: 800px;
+  margin: 20px auto;
+
+  .card-detalhes, .card-comentarios {
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #fff;
+
+    h2 {
+      margin-top: 0;
+    }
+
+    #comentario {
+      display: block;
+      margin-top: 10px;
+      border: 1px solid #ddd;
+      padding: 10px;
+      border-radius: 4px;
+      background-color: #f9f9f9;
+    }
+  }
+
+  .card-detalhes {
+    p {
+      white-space: pre-wrap;
+      margin: 0;
+    }
+  }
+}
+
+

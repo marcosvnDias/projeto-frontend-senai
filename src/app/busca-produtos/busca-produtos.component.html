@@ -1,0 +1,20 @@
+<app-header (buttonClick)="buttonClicked($event)"></app-header>
+
+<fieldset class="exibicao">
+    <legend> Produtos:</legend>
+    <section>
+        <div class="container-produtos" >
+            <div class="produto" *ngFor="let produto of produtosFiltrados; let index=index">
+                <app-card-produto [urlImg]="produto.urlImg" [valor]="produto.valor" [valorPromocao]="produto.desconto" 
+                [promocao]="true" [titulo]="produto.titulo" *ngIf="produto.desconto"></app-card-produto>
+            </div>
+        </div>
+    </section>
+    
+    <section *ngIf="flag">
+        <div class="alert">
+            <p>Nenhum produto encontrado! Por favor, faça uma nova pesquisa.</p>
+        </div>
+    </section>
+</fieldset>
+

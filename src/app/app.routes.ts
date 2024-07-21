@@ -1,5 +1,14 @@
 import { Routes } from '@angular/router';
-import { CardProdutoComponent } from './card-produto/card-produto.component';
-import { AppComponent } from './app.component';
+import { HomeComponent } from './home/home.component';
+import { BuscaProdutosComponent } from './busca-produtos/busca-produtos.component';
 
-export const routes: Routes = [];
+export const routes: Routes = [
+    {
+        path: "",
+        component: HomeComponent
+    },
+    {
+        path: "busca",
+        component: BuscaProdutosComponent
+    }
+];

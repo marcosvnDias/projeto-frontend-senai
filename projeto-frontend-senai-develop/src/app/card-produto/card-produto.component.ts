@@ -1,15 +1,20 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-card-produto',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './card-produto.component.html',
   styleUrl: './card-produto.component.scss'
 })
 export class CardProdutoComponent implements OnInit {
+
+  @Input()
+  id!: string;
+
   @Input()
   urlImg!: string;
 
@@ -29,7 +34,10 @@ export class CardProdutoComponent implements OnInit {
   valorPromocao?: number;
 
   @Input()
-  modoSlide?: true
+  modoSlide?: true;
+
+  @Input()
+  descricao!: string
 
   status = "box-produto";
   ngOnInit(): void {
@@ -45,5 +53,7 @@ export class CardProdutoComponent implements OnInit {
       this.status += " promocao";
     }
   }
+
+  constructor(private router: Router) {}
   
 }

@@ -1,0 +1,36 @@
+<div class="box-oferta-dia">
+    <div class="titulo-oferta">
+        <p>Oferta do Dia</p>
+    </div>
+    <div class="carousel">
+        <div *ngFor="let produto of produtosCarousel; let index=index">
+            <app-card-produto (click)="redirecionaDetalhesProduto(produto.id)" [id]="produto.id" [urlImg]="produto.urlImg" 
+            [valor]="produto.valor" [valorPromocao]="produto.desconto" [promocao]="true"  [modoSlide]="true"
+            [titulo]="produto.titulo" *ngIf="index >= 1 && index < 4 && index != 2"></app-card-produto>
+
+            <app-card-produto (click)="redirecionaDetalhesProduto(produto.id)" [id]="produto.id" [urlImg]="produto.urlImg" 
+            [valor]="produto.valor" [valorPromocao]="produto.desconto" [promocao]="true"
+            [titulo]="produto.titulo" *ngIf="index == 2" [focus]="true"></app-card-produto>
+        </div>
+    </div>
+
+    <div class="sessao-mais-vendidos">
+        <p>Mais Vendidos da Semana</p>
+        <div class="container-produtos">
+            <div *ngFor="let produto of produtosMaisVendidos; let index=index">
+                <app-card-produto (click)="redirecionaDetalhesProduto(produto.id)" [id]="produto.id" [urlImg]="produto.urlImg" [valor]="produto.valor" 
+                [valorPromocao]="produto.desconto" [promocao]="true" [titulo]="produto.titulo"></app-card-produto>
+            </div>
+        </div>
+    </div>
+
+    <div class="sessao-mais-vendidos">
+        <p>Oferta do Dia</p>
+        <div class="container-produtos">
+            <div *ngFor="let produto of produtos; let index=index">
+                <app-card-produto (click)="redirecionaDetalhesProduto(produto.id)" [id]="produto.id" [urlImg]="produto.urlImg" [valor]="produto.valor" [valorPromocao]="produto.desconto" 
+                [promocao]="true" [titulo]="produto.titulo" *ngIf="produto.desconto"></app-card-produto>
+            </div>
+        </div>
+    </div>
+</div>

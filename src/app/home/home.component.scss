@@ -1,0 +1,56 @@
+.box-oferta-dia {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    padding-top: 28px;
+    padding-bottom: 90px;
+}
+
+.titulo-oferta {
+    height: 100%;
+    width: 30%;
+    font-size: 28px;
+    font-weight: 900;
+    background-color: white;
+    color: rgb(131, 160, 185);
+    border-radius: 6px;
+    text-align: center
+}
+
+.carousel {
+    display: flex;
+    gap: 38px;
+}
+
+.sessao-mais-vendidos {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    color: rgb(77, 110, 139);
+    margin-top: 82px;
+
+    p {
+        font-size: 18px;
+        font-weight: 600;
+    }
+}
+
+.container-produtos {
+    width: 100%;
+    display: flex;
+    gap: 28px;
+    color: rgb(255, 255, 255);
+
+}
+
+@media (max-width: 1134px) {
+    .carousel {
+        gap: 24px;
+    }
+
+    .container-produtos {
+        gap: 18px;
+    }
+}
