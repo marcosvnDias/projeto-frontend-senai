@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { CardProdutoComponent } from "../card-produto/card-produto.component";
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
@@ -18,7 +17,7 @@ interface Produto {
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CarouselModule, CardProdutoComponent, CommonModule, FormsModule, HeaderComponent],
+  imports: [CardProdutoComponent, CommonModule, FormsModule, HeaderComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
