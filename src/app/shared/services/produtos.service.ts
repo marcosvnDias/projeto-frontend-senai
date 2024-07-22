@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Produto } from '../interfaces/produto.interface';
-import { Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -14,16 +13,16 @@ export class ProdutosService {
     return this.produtos;
   }
 
-  //Método mantido
-  getProduto(id: string): Observable<Produto>{
+  //Método alterado - removido Observables
+  getProduto(id: string): Produto {
     const produto = this.produtos.find(produto => produto.id === id);
-    return of(produto!);
+    return produto!;
   }
 
   //Mock atualizado
   private produtos: Produto[] = [{
     id: "1",
-    urlImg: "../assets/geladeira.jpg",
+    urlImg: "../../assets/geladeira.jpg",
     valor: 3450,
     titulo: "Geladeira Panasonic A+",
     desconto: 2380,
@@ -34,7 +33,7 @@ Inverter: Reduz em até 43% o consumo de energia, pois regula o compressor de ac
 Frost Free: Sistema que trabalha com a circulação forçada de ar frio, a refrigeração é mais rápida e homogênea, acelerando o congelamento. Não existe a formação de gelo, por isso, o degelo não é necessário.`
   }, {
     id: "2",
-    urlImg: "../assets/kindle.jpg",
+    urlImg: "../../assets/kindle.jpg",
     valor: 1500,
     titulo: "Kindle 11ª Geração",
     desconto: 1200,
@@ -46,7 +45,7 @@ Agora com 16 GB para você armazenar milhares de livros, o dobro de capacidade d
   },
   {
     id: "3",
-    urlImg: "../assets/xbox.jpg",
+    urlImg: "../../assets/xbox.jpg",
     valor: 4000,
     titulo: "Xbox Série S - 1TB (preto)",
     desconto: 3400,
@@ -55,7 +54,7 @@ Agora com 16 GB para você armazenar milhares de livros, o dobro de capacidade d
 Xbox A Velocity Architecture, impulsionada por um SSD personalizado, funciona em conjunto com a inovadora tecnologia de sistema num chip (SOC) para oferecer uma jogabilidade de até 120 FPS.`
   }, {
     id: "4",
-    urlImg: "../assets/fone-ouvido.jpg",
+    urlImg: "../../assets/fone-ouvido.jpg",
     valor: 230,
     titulo: "Edifier W800BT PLUS",
     desconto: 180,
@@ -65,7 +64,7 @@ Até 30 horas de duração da bateria.
 Conexão dupla: Conecte -se com dois dispositivos Bluetooth simultaneamente, alternando sem esforço entre trabalho e entretenimento.`
   }, {
     id: "5",
-    urlImg: "../assets/echo.jpg",
+    urlImg: "../../assets/echo.jpg",
     valor: 600,
     titulo: "Echo Show 5 (3ª geração)",
     desconto: 540,
