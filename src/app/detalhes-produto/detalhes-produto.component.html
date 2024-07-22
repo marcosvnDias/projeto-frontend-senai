@@ -1,3 +1,5 @@
+<app-header></app-header>
+
 <div class="container-foto-descricao" *ngIf="produto">
     <div class="bloco-produto">
         <div class="card-foto">
@@ -14,7 +16,7 @@
 <div class="container-detalhes-comentarios" *ngIf="produto">
     <div class="card-detalhes">
         <h2>Detalhes do produto</h2>
-        <p [innerHTML]="formatDescricao(produto.descricao)">{{ produto.descricao }}</p>
+        <p [innerHTML]="formatDescricao(produto.descricao)">{{ produto.descricao }}</p> 
     </div>
     <div class="card-comentarios">
         <h2>Comentários</h2>

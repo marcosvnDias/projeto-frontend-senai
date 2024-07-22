@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { CardProdutoComponent } from '../card-produto/card-produto.component';
 import { HeaderComponent } from '../header/header.component';
 import { ProdutosService } from '../shared/services/produtos.service';
+import { Produto } from '../shared/interfaces/produto.interface';
 
 
 @Component({
@@ -39,4 +40,8 @@ export class BuscaProdutosComponent {
       this.flag = true;
     }
   }
+
+  selecionado(produto: Produto) {
+    this.router.navigate(['/detalhes'], { state: { produto } });
+    }
 }

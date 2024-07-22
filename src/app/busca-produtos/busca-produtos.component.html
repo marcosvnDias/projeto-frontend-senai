@@ -7,7 +7,7 @@
         <div class="container-produtos" >
             <div class="produto" *ngFor="let produto of produtosFiltrados; let index=index">
                 <app-card-produto [urlImg]="produto.urlImg" [valor]="produto.valor" [valorPromocao]="produto.desconto" 
-                [promocao]="true" [titulo]="produto.titulo" *ngIf="produto.desconto"></app-card-produto>
+                [promocao]="true" [titulo]="produto.titulo" *ngIf="produto.desconto" (click)="selecionado(produto)"></app-card-produto>
             </div>
         </div>
     </section>

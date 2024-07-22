@@ -1,31 +1,31 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, RouterModule } from '@angular/router';
+import { Component } from '@angular/core';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
+import { HeaderComponent } from "../header/header.component";
+import { ProdutosService } from '../shared/services/produtos.service';
 import { Produto } from '../shared/interfaces/produto.interface';
-import { ProdutoService } from '../../../projeto-frontend-senai-develop/src/app/shared/services/produto.service';
 
 @Component({
   selector: 'app-detalhes-produto',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, HeaderComponent],
   templateUrl: './detalhes-produto.component.html',
   styleUrl: './detalhes-produto.component.scss'
 })
-export class DetalhesProdutoComponent implements OnInit {
+export class DetalhesProdutoComponent {
 
   produto?: Produto;
 
-  constructor(private route: ActivatedRoute, private produtoService: ProdutoService) {}
-
-  ngOnInit(): void {
-    const produtoId = this.route.snapshot.paramMap.get('id') ?? '';
-    this.produtoService.getProduto(produtoId).subscribe(produto => {
-      this.produto = produto;
-    })
-    };
+  constructor(private route: ActivatedRoute, private router: Router, private produtosService: ProdutosService) {
+    let selecionado = this.router.getCurrentNavigation()?.extras.state;
+    if (selecionado) {
+      this.produto = this.produtosService.getProduto(selecionado?.['produto'].id);
+    }
+  }
 
     formatDescricao(descricao: string): string {
       return descricao.replace(/\n/g, '<br>');
     }
+
   }
 
