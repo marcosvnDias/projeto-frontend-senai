@@ -1,31 +1,33 @@
 <app-header></app-header>
 
-<div class="container-foto-descricao" *ngIf="produto">
-    <div class="bloco-produto">
-        <div class="card-foto">
-            <img [src]="produto.urlImg" alt="{{ produto.titulo }}">
-        </div>
-        <div class="card-descricao">
-            <h2>{{ produto.titulo }}</h2>
-            <p class="valor">R$ {{ produto.valor }},00</p>
-            <h2 class="valor-promocao">R$ {{produto.desconto}},00</h2>
-            <button>Adicionar ao carrinho</button>
+<div class="box">
+    <div class="container-foto-descricao" *ngIf="produto">
+        <div class="bloco-produto">
+            <div class="card-foto">
+                <img [src]="produto.urlImg" alt="{{ produto.titulo }}">
+            </div>
+            <div class="card-descricao">
+                <h2>{{ produto.titulo }}</h2>
+                <p class="valor">R$ {{ produto.valor }},00</p>
+                <h2 class="valor-promocao">R$ {{produto.desconto}},00</h2>
+                <button>Adicionar ao carrinho</button>
+            </div>
         </div>
     </div>
-</div>
-<div class="container-detalhes-comentarios" *ngIf="produto">
-    <div class="card-detalhes">
-        <h2>Detalhes do produto</h2>
-        <p [innerHTML]="formatDescricao(produto.descricao)">{{ produto.descricao }}</p> 
-    </div>
-    <div class="card-comentarios">
-        <h2>Comentários</h2>
-        <span id="comentario"><h3>Omar Telo</h3>
-            Produto excelente, exatamente como nas fotos.<br></span>
-        <span id="comentario"><h3>Roberto Almeida</h3>
-            O produto atendeu as minhas expectativas, estou muito satisfeito<br></span>
-        <span id="comentario"><h3>Thais Perando</h3>
-            Apenas as cores que não são 100% fiéis. De maneira geral, satisfeito<br></span>
+    <div class="container-detalhes-comentarios" *ngIf="produto">
+        <div class="card-detalhes">
+            <h2>Detalhes do produto</h2>
+            <p [innerHTML]="formatDescricao(produto.descricao)">{{ produto.descricao }}</p> 
+        </div>
+        <div class="card-comentarios">
+            <h2>Comentários</h2>
+            <span id="comentario"><h3>Omar Telo</h3>
+                Produto excelente, exatamente como nas fotos.<br></span>
+            <span id="comentario"><h3>Roberto Almeida</h3>
+                O produto atendeu as minhas expectativas, estou muito satisfeito<br></span>
+            <span id="comentario"><h3>Thais Perando</h3>
+                Apenas as cores que não são 100% fiéis. De maneira geral, satisfeito<br></span>
+        </div>
     </div>
 </div>
     
