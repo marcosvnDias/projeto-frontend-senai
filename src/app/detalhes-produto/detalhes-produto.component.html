@@ -8,8 +8,8 @@
             </div>
             <div class="card-descricao">
                 <h2>{{ produto.titulo }}</h2>
-                <p class="valor">R$ {{ produto.valor }},00</p>
-                <h2 class="valor-promocao">R$ {{produto.desconto}},00</h2>
+                <p class="valor">de: R$ {{ produto.valor }},00</p>
+                <h2 class="valor-promocao">POR: R$ {{produto.desconto}},00</h2>
                 <button (click)="adicionarCarrinho(produto)">Adicionar ao carrinho</button>
             </div>
         </div>

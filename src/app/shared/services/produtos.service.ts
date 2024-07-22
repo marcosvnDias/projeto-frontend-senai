@@ -23,7 +23,7 @@ export class ProdutosService {
   private produtos: Produto[] = [{
     id: "1",
     urlImg: "../../assets/geladeira.jpg",
-    valor: 3.450,
+    valor: 3450,
     titulo: "Geladeira Panasonic A+",
     desconto: 2380,
     vendidos: 21,
@@ -34,7 +34,7 @@ Frost Free: Sistema que trabalha com a circulação forçada de ar frio, a refri
   }, {
     id: "2",
     urlImg: "../../assets/kindle.jpg",
-    valor: 1.500,
+    valor: 1500,
     titulo: "Kindle 11ª Geração",
     desconto: 1200,
     vendidos: 5679,
@@ -46,7 +46,7 @@ Agora com 16 GB para você armazenar milhares de livros, o dobro de capacidade d
   {
     id: "3",
     urlImg: "../../assets/xbox.jpg",
-    valor: 4.000,
+    valor: 4000,
     titulo: "Xbox Série S - 1TB (preto)",
     desconto: 3400,
     vendidos: 6500,
