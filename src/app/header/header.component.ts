@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   standalone: true,
   imports: [FormsModule],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.scss'
+  styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
 
@@ -16,7 +16,7 @@ export class HeaderComponent {
 
   parametro: string = '';
 
-  @Output('buttomClick') evento = new EventEmitter();
+  @Output('buttonClick') evento = new EventEmitter();
 
   buscar(parametro: string) {
     if (this.router.url === '/busca' && this.parametro) {
@@ -26,5 +26,9 @@ export class HeaderComponent {
     } else {
       alert('Digite algo para pesquisar.')
     }
+  }
+
+  navegarParaCarrinho() {
+    this.router.navigate(['/carrinho']);
   }
 }
