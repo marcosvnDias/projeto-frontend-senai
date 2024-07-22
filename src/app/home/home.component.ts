@@ -3,9 +3,9 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { CardProdutoComponent } from "../card-produto/card-produto.component";
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
-import { ProdutosService } from '../services/produtos.service';
 import { FormsModule } from '@angular/forms';
 import { HeaderComponent } from "../header/header.component";
+import { ProdutosService } from '../shared/services/produtos.service';
 
 interface Produto {
   urlImg: string,
@@ -38,7 +38,6 @@ export class HomeComponent implements OnInit{
     this.trocarPosicoes(this.produtosCarousel);
     let maisVendidos:Produto[] = this.acharMaisVendidos(this.produtosCarousel);
     this.produtosMaisVendidos = maisVendidos;
-    console.log(this.produtosMaisVendidos)
   }
 
   trocarPosicoes(produtos:Produto[]) {

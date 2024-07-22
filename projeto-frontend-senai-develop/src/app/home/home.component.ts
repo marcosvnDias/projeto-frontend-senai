@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { CardProdutoComponent } from "../card-produto/card-produto.component";
 import { CommonModule } from '@angular/common';
-import { Produto } from '../shared/interfaces/produto.interface';
+import { Produto } from '../../../../src/app/shared/interfaces/produto.interface';
 import { Router, RouterModule } from '@angular/router';
 import { ProdutoService } from '../shared/services/produto.service';
 

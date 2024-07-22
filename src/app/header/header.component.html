@@ -4,8 +4,8 @@
     </div>
     <div id="search-section" class="section">
         <div class="search">
-            <input type="search" name="product-search" id="product-search" placeholder="Pesquisar por produtos">
-            <button type="button" id="search-button">
+            <input type="search" name="product-search" placeholder="Pesquisar por produtos" [(ngModel)]="parametro">
+            <button type="button" (click)="buscar(parametro)">
                 <i>
                     <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="25" height="25" viewBox="0 0 30 30">
                         <path

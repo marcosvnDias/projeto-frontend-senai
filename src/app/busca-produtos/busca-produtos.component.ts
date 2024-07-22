@@ -1,9 +1,9 @@
 import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
-import { ProdutosService } from '../services/produtos.service';
 import { CommonModule } from '@angular/common';
 import { CardProdutoComponent } from '../card-produto/card-produto.component';
 import { HeaderComponent } from '../header/header.component';
+import { ProdutosService } from '../shared/services/produtos.service';
 
 
 @Component({
