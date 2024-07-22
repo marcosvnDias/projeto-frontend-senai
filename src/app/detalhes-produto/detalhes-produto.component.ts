@@ -23,9 +23,20 @@ export class DetalhesProdutoComponent {
     }
   }
 
-    formatDescricao(descricao: string): string {
-      return descricao.replace(/\n/g, '<br>');
-    }
-
+  formatDescricao(descricao: string): string {
+    return descricao.replace(/\n/g, '<br>');
   }
+
+  adicionarCarrinho(produto: Produto) {
+    //this.router.navigate(['/carinho'], { state: { produto } });
+
+    //Receber - dentro do constructor em /carrinho (puxa por id):
+    // constructor(private router: Router, private produtosService: ProdutosService) {
+    //   let produtoAdicionado = this.router.getCurrentNavigation()?.extras.state;
+    //   if (produtoAdicionado) {
+    //     this.produto = this.produtosService.getProduto(selecionado?.['produto'].id);
+    //   }
+    // }
+  }
+}
 
