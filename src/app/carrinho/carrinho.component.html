@@ -1,0 +1,35 @@
+<app-header></app-header>
+
+<div class="carrinho-container">
+  <div class="produtos-carrinho" *ngIf="produtosCarrinho.length > 0; else carrinhoVazio">
+    <div *ngFor="let produto of produtosCarrinho; let i = index" class="produto-carrinho">
+      <img [src]="produto.urlImg" alt="{{ produto.titulo }}" class="produto-imagem"/>
+      <div class="produto-detalhes">
+        <h3>{{ produto.titulo }}</h3>
+        <p>Quantidade: 
+          <button (click)="alterarQuantidade(i, -1)" [disabled]="produto.quantidade <= 1">-</button>
+          {{ produto.quantidade }}
+          <button (click)="alterarQuantidade(i, 1)">+</button>
+        </p>
+        <p>Preço Unitário: R$ {{ produto.valor }}</p>
+        <p>Total: R$ {{ produto.valor * produto.quantidade }}</p>
+        <button (click)="removerProduto(i)">Excluir</button>
+      </div>
+    </div>
+  </div>
+  
+  <div class="resumo-compra" *ngIf="produtosCarrinho.length > 0">
+    <h2>Resumo da Compra</h2>
+    <p>Valor dos Produtos: R$ {{ valorTotalProdutos }}</p>
+    <p>Valor do Frete: R$ {{ valorFrete }}</p>
+    <p>Valor Total: R$ {{ valorTotalCompra }}</p>
+    <button (click)="comprar()">Comprar</button>
+  </div>
+
+  <ng-template #carrinhoVazio>
+    <div class="carrinho-vazio">
+      <p>O carrinho está vazio!</p>
+      <button (click)="iniciarBusca()">Iniciar Busca</button>
+    </div>
+  </ng-template>
+</div>

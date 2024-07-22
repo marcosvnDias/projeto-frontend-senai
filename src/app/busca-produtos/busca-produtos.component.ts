@@ -1,18 +1,19 @@
-import { Component, Input } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CardProdutoComponent } from '../card-produto/card-produto.component';
+import { Router } from '@angular/router';
 import { HeaderComponent } from '../header/header.component';
+import { CardProdutoComponent } from '../card-produto/card-produto.component';
 import { ProdutosService } from '../shared/services/produtos.service';
 import { Produto } from '../shared/interfaces/produto.interface';
+
 
 
 @Component({
   selector: 'app-busca-produtos',
   standalone: true,
-  imports: [CommonModule, CardProdutoComponent, HeaderComponent],
+  imports: [CommonModule, HeaderComponent, CardProdutoComponent],
   templateUrl: './busca-produtos.component.html',
-  styleUrl: './busca-produtos.component.scss'
+  styleUrls: ['./busca-produtos.component.scss']
 })
 export class BuscaProdutosComponent {
 
@@ -27,10 +28,12 @@ export class BuscaProdutosComponent {
     }
   }
 
-  buttonClicked(parametro: string) {
+  buttonClicked(event: Event) {
+    const parametro = (event.target as HTMLInputElement).value;
     this.flag = false;
     this.buscar(parametro);
   }
+  
 
   buscar(campoBusca: string) {
     this.produtosFiltrados = this.produtosService.getProdutos().filter(produto =>

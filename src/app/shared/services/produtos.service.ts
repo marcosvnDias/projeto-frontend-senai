@@ -6,19 +6,6 @@ import { Produto } from '../interfaces/produto.interface';
 })
 export class ProdutosService {
 
-  constructor() { }
-
-  //Método original (busca-produto e /home)
-  getProdutos() {
-    return this.produtos;
-  }
-
-  //Método alterado - removido Observables
-  getProduto(id: string): Produto {
-    const produto = this.produtos.find(produto => produto.id === id);
-    return produto!;
-  }
-
   //Mock atualizado
   private produtos: Produto[] = [{
     id: "1",
@@ -73,7 +60,41 @@ Conexão dupla: Conecte -se com dois dispositivos Bluetooth simultaneamente, alt
 Tamanho compacto, som mais potente: Assista a filmes e séries, e ouça músicas, podcasts e muito mais no Amazon Music, Spotify, Prime Video e outros. Tudo isso com um som grave mais potente e vocais mais nítidos.
 Com o display de 5,5” você pode ver vídeos, filmes, séries, nomes das músicas e muito mais.`
   }];
+
+  private carrinho: (Produto & { quantidade: number })[] = [];
+
+  constructor() { }
+
+  //Método original (busca-produto e /home)
+  getProdutos() {
+    return this.produtos;
+  }
+
+  //Método alterado - removido Observables
+  getProduto(id: string): Produto {
+    const produto = this.produtos.find(produto => produto.id === id);
+    return produto!;
+  }
+
+  getCarrinho() {
+    return this.carrinho;
+  }
+
+  adicionarAoCarrinho(produto: Produto) {
+    const item = this.carrinho.find(p => p.id === produto.id);
+    if (item) {
+      item.quantidade++;
+    } else {
+      this.carrinho.push({ ...produto, quantidade: 1 });
+    }
+  }
+
+  removerDoCarrinho(id: string) {
+    this.carrinho = this.carrinho.filter(produto => produto.id !== id);
+  }
 }
+
+
 
 
 
