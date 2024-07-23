@@ -20,11 +20,13 @@ export class HeaderComponent {
 
   buscar(parametro: string) {
     if (this.router.url === '/busca' && this.parametro) {
-      this.evento.emit(this.parametro)
+      this.evento.emit(this.parametro);
+      this.parametro = ''; // Reset the search parameter
     } else if (this.parametro) {
       this.router.navigate(['/busca'], { state: { parametro } });
+      this.parametro = ''; // Reset the search parameter
     } else {
-      alert('Digite algo para pesquisar.')
+      alert('Digite algo para pesquisar.');
     }
   }
 

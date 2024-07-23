@@ -1,0 +1,21 @@
+[
+    {
+      "id": "2",
+      "urlImg": "../../assets/kindle.jpg",
+      "valor": 1500,
+      "titulo": "Kindle 11ª Geração",
+      "desconto": 1200,
+      "vendidos": 5679,
+      "descricao": "O Kindle mais leve e compacto, agora com tela de 300 ppi de alta resolução para textos e imagens nítidos.\nAgora com bateria com duração estendida, uma única carga por USB-C dura até 6 semanas.\nAgora com 16 GB para você armazenar milhares de livros, o dobro de capacidade de armazenamento da geração anterior."
+    },
+    {
+      "id": "3",
+      "urlImg": "../../assets/xbox.jpg",
+      "valor": 4000,
+      "titulo": "Xbox Série S - 1TB (preto)",
+      "desconto": 3400,
+      "vendidos": 6500,
+      "descricao": "Desfrute de velocidade e desempenho de nova geração com o Xbox Series S em preto carvão, que inclui uma unidade SSD de 1 TB.\nXbox A Velocity Architecture, impulsionada por um SSD personalizado, funciona em conjunto com a inovadora tecnologia de sistema num chip (SOC) para oferecer uma jogabilidade de até 120 FPS."
+    }
+  ]
+  
