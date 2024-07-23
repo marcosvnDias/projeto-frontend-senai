@@ -1,0 +1,23 @@
+#footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f5f3f2;
+    padding: 0.3rem;
+
+    * {
+        margin: 0.5rem;
+    }
+
+    --primary-color-vals: 143, 178, 209;
+}
+
+#logo {
+    height: 50px;
+}
+
+
+.text-secondary {
+    color: gray;
+}

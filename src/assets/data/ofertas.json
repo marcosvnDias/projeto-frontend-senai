@@ -1,0 +1,21 @@
+[
+    {
+      "id": "1",
+      "urlImg": "../../assets/geladeira.jpg",
+      "valor": 3450,
+      "titulo": "Geladeira Panasonic A+",
+      "desconto": 2380,
+      "vendidos": 21,
+      "descricao": "Design moderno e elegante, além disso, é econômico, espaçoso e possui diversas funcionalidades para o seu dia-a-dia.\nVitamin Power: Faz com que os nutrientes naturais de seus legumes e verduras sejam preservados devido a iluminação de LED especial sobre o gavetão de hortifrúti.\nInverter: Reduz em até 43% o consumo de energia, pois regula o compressor de acordo com a temperatura que varia com o abre e fecha da porta e com a quantidade de comida interna.\nFrost Free: Sistema que trabalha com a circulação forçada de ar frio, a refrigeração é mais rápida e homogênea, acelerando o congelamento. Não existe a formação de gelo, por isso, o degelo não é necessário."
+    },
+    {
+      "id": "4",
+      "urlImg": "../../assets/fone-ouvido.jpg",
+      "valor": 230,
+      "titulo": "Edifier W800BT PLUS",
+      "desconto": 180,
+      "vendidos": 54,
+      "descricao": "Experimente som dinâmico com grave poderoso: experimente som claro, detalhado e poderoso com a excelente resolução dos drivers de 40 mm.\nAté 30 horas de duração da bateria.\nConexão dupla: Conecte -se com dois dispositivos Bluetooth simultaneamente, alternando sem esforço entre trabalho e entretenimento."
+    }
+  ]
+  

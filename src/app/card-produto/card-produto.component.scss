@@ -1,0 +1,138 @@
+.box-produto {
+    height: 310px;
+    width: 260px;
+    background-color: white;
+    border-radius: 6px;
+    padding-bottom: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+    &:hover {
+        scale: 1.07;
+        box-shadow: 0px 27px 10px black;
+    }
+}
+
+.modoSlide {
+    height: 310px;
+    width: 260px;
+    background-color: white;
+    border-radius: 6px;
+    padding-bottom: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+    &:hover {
+        scale: 0.95;
+    }
+}
+
+.box-img {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 16px;
+}
+
+.img-produto {
+    height: 100%;
+    width: 100%;
+    border-bottom: 2px solid rgb(224, 224, 224);
+    border-radius: 6px 6px 0px 0px;
+}
+
+.box-descricao-produto {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    background-color: white;
+    border-radius: 6px;
+    padding: 6px 10px;
+}
+
+.text-valor-produto {
+    font-size: 28px;
+}
+
+.text-titulo-produto {
+    font-size: 18px;
+    font-weight: 300;
+    color: rgb(58, 58, 58);
+}
+
+.focus {
+    scale: 1.12;
+    box-shadow: 0px 19px 10px black;
+    transition: 0.3s;
+    // animation: fadin 0.01s;
+}
+
+.promocao {
+    color: rgb(131, 160, 185);
+}
+
+.valor {
+    font-size: 20px;
+    color: rgb(173, 173, 173);
+}
+
+@keyframes fadin {
+    0% {
+        scale: 1.01;
+        box-shadow: 0px 19px 10px rgba(0, 0, 0, 0.158);
+    }
+
+    100% {
+        scale: 1.12;
+        box-shadow: 0px 19px 10px black;
+    }
+}
+
+@media (max-width: 1440px) {
+    .box-produto {
+        height: 250px;
+        width: 200px;
+    }
+
+    .modoSlide {
+        height: 250px;
+        width: 200px;
+    }
+}
+
+
+@media (max-width: 1329px) {
+    .box-produto {
+        height: 180px;
+        width: 180px;
+    }
+
+    .modoSlide {
+        height: 180px;
+        width: 180px;
+    }
+}
+
+@media (max-width: 1134px) {
+    .box-produto {
+        height: 130px;
+        width: 130px;
+    }
+
+    .modoSlide {
+        height: 130px;
+        width: 130px;
+    }
+}
+
+@media (max-width: 768px) {
+    .box-produto {
+        height: 130px;
+        width: 130px;
+    }
+
+    .modoSlide {
+        height: 130px;
+        width: 130px;
+    }
+}
