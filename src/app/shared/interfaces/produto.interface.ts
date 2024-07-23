@@ -1,9 +1,9 @@
 export interface Produto {
-    id: string,
-    urlImg: string,
-    valor: number,
-    titulo: string,
-    desconto?: number,
-    vendidos: number,
-    descricao: string
-  }
+  id: string | number;
+  urlImg: string;
+  valor: number;
+  titulo: string;
+  desconto?: number;
+  vendidos: number;
+  descricao: string;
+}

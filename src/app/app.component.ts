@@ -9,7 +9,7 @@ import { FooterComponent } from './footer/footer.component';
   standalone: true,
   imports: [RouterOutlet, CardProdutoComponent, HeaderComponent, FooterComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
   title = 'projeto-frontend-senai';

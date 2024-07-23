@@ -12,27 +12,33 @@ import { Produto } from '../shared/interfaces/produto.interface';
   standalone: true,
   imports: [CardProdutoComponent, CommonModule, FormsModule, HeaderComponent],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.scss'
+  styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit{
+export class HomeComponent implements OnInit {
 
-  constructor(private router: Router, private produtosService: ProdutosService) {
-  }
+  produtos: Produto[] = [];
+  produtosCarousel: Produto[] = [];
+  produtosMaisVendidos: Produto[] = [];
 
-  produtos:Produto[] = this.produtosService.getProdutos();
-
-  produtosCarousel:Produto[] = [...this.produtos]; 
-  
-  produtosMaisVendidos:Produto[] = [];
+  constructor(private router: Router, private produtosService: ProdutosService) {}
 
   ngOnInit(): void {
-    // throw new Error('Method not implemented.');
-    this.trocarPosicoes(this.produtosCarousel);
-    let maisVendidos:Produto[] = this.acharMaisVendidos(this.produtosCarousel);
-    this.produtosMaisVendidos = maisVendidos;
+    this.produtosService.getProdutosEmOferta().then((produtos: Produto[]) => {
+      this.produtos = produtos;
+      this.produtosCarousel = produtos.slice(0, 5);
+      this.trocarPosicoes(this.produtosCarousel);
+    }).catch((error: any) => {
+      console.error('Erro ao carregar produtos em oferta:', error);
+    });
+
+    this.produtosService.getProdutosMaisVendidos().then((produtos: Produto[]) => {
+      this.produtosMaisVendidos = produtos;
+    }).catch((error: any) => {
+      console.error('Erro ao carregar produtos mais vendidos:', error);
+    });
   }
 
-  trocarPosicoes(produtos:Produto[]) {
+  trocarPosicoes(produtos: Produto[]) {
     setInterval(() => {
       let primeiroItem = produtos.shift();
       if (primeiroItem) {
@@ -41,37 +47,7 @@ export class HomeComponent implements OnInit{
     }, 5700);
   }
 
-  acharMaisVendidos(produtos:Produto[]) {
-    let produtosMaisVendidos:Produto[] = [];
-    for (let i = 0; i <= produtos.length; i++) {
-      let maisVendido: Produto = {
-        urlImg: "",
-        valor: 0,
-        titulo: "",
-        desconto: 0,
-        vendidos: 0,
-        id: '',
-        descricao: ''
-      };
-  
-      produtos.forEach((produto) => {
-        if (produto.vendidos > maisVendido.vendidos) {
-          maisVendido = produto;
-        }
-      });
-  
-      produtosMaisVendidos.push(maisVendido);
-      let produtosAtualizado:Produto[] = produtos.filter((item) => item.titulo != maisVendido.titulo);
-      produtos = produtosAtualizado; 
-      
-    }    
-    // console.log(produtos)
-    produtos = produtosMaisVendidos;
-    return produtos
-  }
-
   selecionado(produto: Produto) {
-    this.router.navigate(['/detalhes'], { state: { produto } });
-    }
-
+    this.router.navigate(['/detalhes', produto.id]);
+  }
 }

@@ -14,7 +14,7 @@ export const routes: Routes = [
         component: BuscaProdutosComponent
     },
     {
-        path: "detalhes",
+        path: "detalhes/:id",
         component: DetalhesProdutoComponent
     },
     {

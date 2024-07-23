@@ -1,16 +1,17 @@
 <div [className]="status">
     <div class="box-img">
-        <img class="img-produto" [src]="urlImg"/>
+      <img class="img-produto" [src]="urlImg"/>
     </div>
     <div class="box-descricao-produto">
-        <p class="text-valor-produto" *ngIf="!promocao">
-            R$ {{valor}}
-        </p>
-        <p class="text-valor-produto">
-            R$ {{valorPromocao}} <s *ngIf="promocao" class="valor"> {{valor}}</s>
-        </p>
-        <p class="text-titulo-produto">
-            {{titulo}}
-        </p>
+      <p class="text-valor-produto" *ngIf="!promocao">
+        R$ {{valor}}
+      </p>
+      <p class="text-valor-produto">
+        R$ {{valorPromocao}} <s *ngIf="promocao" class="valor"> {{valor}}</s>
+      </p>
+      <p class="text-titulo-produto">
+        {{titulo}}
+      </p>
     </div>
-</div>
+  </div>
+  
