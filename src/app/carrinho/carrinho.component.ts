@@ -4,7 +4,6 @@ import { Router } from '@angular/router';
 import { HeaderComponent } from '../header/header.component';
 import { FooterComponent } from '../footer/footer.component';
 import { Produto } from '../shared/interfaces/produto.interface';
-import { ProdutosService } from '../shared/services/produtos.service';
 
 @Component({
   selector: 'app-carrinho',
@@ -18,14 +17,11 @@ export class CarrinhoComponent implements OnInit {
   produtosCarrinho: (Produto & { quantidade: number })[] = [];
   valorFrete: number = 20; // Valor fixo do frete
 
-  constructor(private router: Router, private produtosService: ProdutosService) { }
+  constructor(private router: Router) {}
 
   ngOnInit(): void {
-    // Simulando produtos no carrinho
-    this.produtosCarrinho = this.produtosService.getProdutos().map(produto => ({
-      ...produto,
-      quantidade: 1
-    }));
+    const carrinho = sessionStorage.getItem('carrinho');
+    this.produtosCarrinho = carrinho ? JSON.parse(carrinho) : [];
   }
 
   get valorTotalProdutos(): number {
@@ -40,11 +36,13 @@ export class CarrinhoComponent implements OnInit {
     const produto = this.produtosCarrinho[index];
     if (produto.quantidade + change >= 1) {
       produto.quantidade += change;
+      sessionStorage.setItem('carrinho', JSON.stringify(this.produtosCarrinho));
     }
   }
 
   removerProduto(index: number) {
     this.produtosCarrinho.splice(index, 1);
+    sessionStorage.setItem('carrinho', JSON.stringify(this.produtosCarrinho));
   }
 
   comprar() {

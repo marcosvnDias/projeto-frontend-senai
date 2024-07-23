@@ -28,15 +28,19 @@ export class DetalhesProdutoComponent {
   }
 
   adicionarCarrinho(produto: Produto) {
-    //this.router.navigate(['/carinho'], { state: { produto } });
+    const carrinho = sessionStorage.getItem('carrinho');
+    let itensCarrinho = carrinho ? JSON.parse(carrinho) : [];
 
-    //Receber - dentro do constructor em /carrinho (puxa por id):
-    // constructor(private router: Router, private produtosService: ProdutosService) {
-    //   let produtoAdicionado = this.router.getCurrentNavigation()?.extras.state;
-    //   if (produtoAdicionado) {
-    //     this.produto = this.produtosService.getProduto(selecionado?.['produto'].id);
-    //   }
-    // }
+    const itemExistente = itensCarrinho.find((item: any) => item.id === produto.id);
+    if (itemExistente) {
+      itemExistente.quantidade += 1;
+    } else {
+      itensCarrinho.push({ ...produto, quantidade: 1 });
+    }
+
+    sessionStorage.setItem('carrinho', JSON.stringify(itensCarrinho));
+    alert('Produto adicionado ao carrinho!');
+    this.router.navigate(['/carrinho']);
   }
 }
 

@@ -5,14 +5,7 @@ import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { HeaderComponent } from "../header/header.component";
 import { ProdutosService } from '../shared/services/produtos.service';
-
-interface Produto {
-  urlImg: string,
-  valor: number,
-  titulo: string,
-  desconto?: number,
-  vendidos: number
-}
+import { Produto } from '../shared/interfaces/produto.interface';
 
 @Component({
   selector: 'app-home',
@@ -56,7 +49,9 @@ export class HomeComponent implements OnInit{
         valor: 0,
         titulo: "",
         desconto: 0,
-        vendidos: 0
+        vendidos: 0,
+        id: '',
+        descricao: ''
       };
   
       produtos.forEach((produto) => {
@@ -69,47 +64,14 @@ export class HomeComponent implements OnInit{
       let produtosAtualizado:Produto[] = produtos.filter((item) => item.titulo != maisVendido.titulo);
       produtos = produtosAtualizado; 
       
-    }
-    
+    }    
     // console.log(produtos)
     produtos = produtosMaisVendidos;
     return produtos
   }
 
-
-
-// substituído pelo service, com mock
-   // produtos:Produto[] = [{
-  //   urlImg: "../assets/geladeira.jpg",
-  //   valor: 3450,
-  //   titulo: "Geladeira Panasonic A+",
-  //   desconto: 2380,
-  //   vendidos: 21
-  // }, {
-  //   urlImg: "../assets/kindle.jpg",
-  //   valor: 1500,
-  //   titulo: "Kindle 11ª Geração",
-  //   desconto: 1200,
-  //   vendidos: 5679
-  // },
-  // {
-  //   urlImg: "../assets/xbox.jpg",
-  //   valor: 4000,
-  //   titulo: "Xbox Série S - 1TB (preto)",
-  //   desconto: 3400,
-  //   vendidos: 6500
-  // },{
-  //   urlImg: "../assets/fone-ouvido.jpg",
-  //   valor: 230,
-  //   titulo: "Edifier W800BT PLUS",
-  //   desconto: 180,
-  //   vendidos: 54
-  // }, {
-  //   urlImg: "../assets/echo.jpg",
-  //   valor: 600,
-  //   titulo: "Echo Show 5 (3ª geração)",
-  //   desconto: 540,
-  //   vendidos: 462
-  // }];
+  selecionado(produto: Produto) {
+    this.router.navigate(['/detalhes'], { state: { produto } });
+    }
 
 }
